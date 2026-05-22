@@ -19,6 +19,6 @@ public class ProjectController : ControllerBase
     public IActionResult Create(CreateProjectDto dto)
     {
         _service.CreateProject(dto);
-        return Ok("Proyecto creado");
+        return Ok("Proyecto registrado correctamente.");
     }
 }

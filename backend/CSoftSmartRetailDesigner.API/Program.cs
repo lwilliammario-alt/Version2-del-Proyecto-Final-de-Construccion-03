@@ -1,9 +1,17 @@
 using CSoftSmartRetailDesigner.Application.Interfaces;
 using CSoftSmartRetailDesigner.Application.Services;
+using CSoftSmartRetailDesigner.Infrastructure.Data;
+using CSoftSmartRetailDesigner.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔹 REGISTRAR SERVICIOS (AQUÍ VA)
+// Configurar el DbContext con PostgreSQL
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Registrar servicios y repositorios inyectados
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IProjectService, ProjectService>();
 
 // Add services to the container.
