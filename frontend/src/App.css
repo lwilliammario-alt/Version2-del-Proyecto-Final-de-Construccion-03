@@ -283,3 +283,33 @@
   margin-bottom: 20px;
   font-size: 14px;
 }
+
+/* Estilos adicionales para mejorar la estética del formulario */
+.form-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: var(--text);
+  margin-top: -16px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.alert-icon {
+  margin-right: 8px;
+  display: inline-block;
+  transform: translateY(1px);
+}
+
+.alert-text {
+  font-weight: 500;
+  display: inline-block;
+}
